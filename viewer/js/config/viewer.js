@@ -2,13 +2,13 @@ define([
     'esri/units',
     'esri/geometry/Extent',
     'esri/config',
-    /*'esri/urlUtils',*/
+    'esri/urlUtils',
     'esri/tasks/GeometryService',
     'esri/layers/ImageParameters',
     'gis/plugins/Google',
     'dojo/i18n!./nls/main',
     'dojo/topic'
-], function (units, Extent, esriConfig, /*urlUtils,*/ GeometryService, ImageParameters, GoogleMapsLoader, i18n, topic) {
+], function (units, Extent, esriConfig, urlUtils, GeometryService, ImageParameters, GoogleMapsLoader, i18n, topic) {
 
     // url to your proxy page, must be on same machine hosting you app. See proxy folder for readme.
     esriConfig.defaults.io.proxyUrl = 'proxy/proxy.ashx';
@@ -16,17 +16,17 @@ define([
 
     // add a proxy rule to force specific domain requests through proxy
     // be sure the domain is added in proxy.config
-    /*urlUtils.addProxyRule({
-        urlPrefix: 'www.example.com',
-        proxyUrl: 'proxy/proxy.ashx'
-    });*/
+    // urlUtils.addProxyRule({
+    //     urlPrefix: 'services.arcgisonline.com',
+    //     proxyUrl: 'proxy/proxy.ashx'
+    // });
 
     // url to your geometry server.
     esriConfig.defaults.geometryService = new GeometryService('https://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer');
 
     // Use your own Google Maps API Key.
     // https://developers.google.com/maps/documentation/javascript/get-api-key
-    GoogleMapsLoader.KEY = 'NOT-A-REAL-API-KEY';
+    GoogleMapsLoader.KEY = 'AIzaSyCRYq6_sior_4AxWU4YUsyKkSJMb3hLgXs';
 
     // helper function returning ImageParameters for dynamic layers
     // example:
