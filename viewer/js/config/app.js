@@ -14,11 +14,19 @@
                 location: path + 'js/config'
             }, {
                 name: 'proj4js',
-                location: '//cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15'
+                location: path + 'js/libs/proj4js-2.3.15'
             }, {
                 name: 'flag-icon-css',
-                location: '//cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0'
-            }
+                location: path + 'js/libs/flag-icon-css-2.8.0'
+            }, {
+		        name: 'put-selector',
+		        main: 'put',
+		        location: path + 'js/libs/put-selector-0.3.6'
+		    }, {
+		        name: 'xstyle',
+		        main: 'css',
+		        location: path + 'js/libs/xstyle-0.3.2'
+		    }
         ]
     };
 
