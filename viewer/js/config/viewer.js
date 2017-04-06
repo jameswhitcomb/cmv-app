@@ -477,7 +477,8 @@ define([
                 position: 3,
                 options: 'config/find'
             },
-            draw: {
+            /*
+			draw: {
                 include: true,
                 id: 'draw',
                 type: 'titlePane',
@@ -490,6 +491,28 @@ define([
                 options: {
                     map: true,
                     mapClickMode: true
+                }
+            },
+			*/
+            draw: {
+                include: true,
+                id: 'draw',
+                type: 'titlePane',
+                position: 4,
+                title: 'Draw',
+                iconClass: 'fa-paint-brush',
+                open: false,
+                path: 'jimu/BaseWidgetPanel',
+                options: {
+                    widgetManager: true,
+                    config: {
+                        widgets: [
+                            {
+                                id: 'WABDraw',
+                                uri: 'wabwidgets/Draw/Widget'
+                            }
+                        ]
+                    }
                 }
             },
             measure: {

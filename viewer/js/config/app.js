@@ -10,9 +10,6 @@
                 name: 'gis',
                 location: path + 'js/gis'
             }, {
-                name: 'config',
-                location: path + 'js/config'
-            }, {
                 name: 'proj4js',
                 location: path + 'js/libs/proj4js-2.3.15'
             }, {
@@ -26,7 +23,24 @@
 		        name: 'xstyle',
 		        main: 'css',
 		        location: path + 'js/libs/xstyle-0.3.2'
-		    }
+		    }, {
+	        /* customizations for WAB widgets */
+	            name: 'widgets',
+	            location: path + 'js/gis/widgets'
+	        }, {
+	            name: 'jimu',
+	            location: path + 'js/gis/wab/2.2/jimu.js'
+	        }, {
+	            name: 'libs',
+	            location: path + 'js/gis/wab/2.2/libs'
+	        }, {
+	            name: 'wabwidgets',
+	            location: path + 'js/gis/wab/2.2/widgets'
+	        /* end customizations for WAB widgets */
+	        }, {
+                name: 'config',
+                location: path + 'js/config'
+            }
         ]
     };
 
@@ -42,10 +56,12 @@
         'viewer/_ConfigMixin', // manage the Configuration
         'viewer/_LayoutMixin', // build and manage the Page Layout and User Interface
         'viewer/_MapMixin', // build and manage the Map
-        'viewer/_WidgetsMixin' // build and manage the Widgets
+        'viewer/_WidgetsMixin', // build and manage the Widgets
 
         // 'viewer/_WebMapMixin' // for WebMaps
-        //'config/_customMixin'
+        //'config/_customMixin',
+
+        'viewer/_WABMixin' // cusom mix-in to use WAB widgets
 
     ], function (
         declare,
@@ -54,10 +70,12 @@
         _ConfigMixin,
         _LayoutMixin,
         _MapMixin,
-        _WidgetsMixin
+        _WidgetsMixin,
 
         // _WebMapMixin
         //_MyCustomMixin
+		
+        _WABMixin
 
     ) {
         var App = declare([
@@ -69,10 +87,11 @@
             // for the most part they are interchangeable, except _ConfigMixin
             // and _ControllerBase
             //
-            _LayoutMixin,
+        	_WABMixin,
             _WidgetsMixin,
             // _WebMapMixin,
             _MapMixin,
+            _LayoutMixin,
 
             // configMixin should be right before _ControllerBase so it is
             // called first to initialize the config object
