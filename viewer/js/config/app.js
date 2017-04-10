@@ -24,19 +24,17 @@
 		        main: 'css',
 		        location: path + 'js/libs/xstyle-0.3.2'
 		    }, {
-	        /* customizations for WAB widgets */
 	            name: 'widgets',
 	            location: path + 'js/gis/widgets'
 	        }, {
 	            name: 'jimu',
-	            location: path + 'js/gis/wab/2.2/jimu.js'
+	            location: path + 'js/gis/wab/2.3/jimu.js'
 	        }, {
 	            name: 'libs',
-	            location: path + 'js/gis/wab/2.2/libs'
+	            location: path + 'js/gis/wab/2.3/libs'
 	        }, {
 	            name: 'wabwidgets',
-	            location: path + 'js/gis/wab/2.2/widgets'
-	        /* end customizations for WAB widgets */
+	            location: path + 'js/gis/wab/2.3/widgets'
 	        }, {
                 name: 'config',
                 location: path + 'js/config'
@@ -72,35 +70,19 @@
         _MapMixin,
         _WidgetsMixin,
 
-        // _WebMapMixin
+        _WebMapMixin
         //_MyCustomMixin
-		
-        _WABMixin
 
     ) {
-        var App = declare([
-
-            // add custom mixins here...note order may be important and
-            // overriding certain methods incorrectly may break the app
-            // First on the list are last called last, for instance the startup
-            // method on _ControllerBase is called FIRST, and _LayoutMixin is called LAST
-            // for the most part they are interchangeable, except _ConfigMixin
-            // and _ControllerBase
-            //
-        	_WABMixin,
-            _WidgetsMixin,
-            // _WebMapMixin,
-            _MapMixin,
+        var controller = new (declare([
             _LayoutMixin,
+            _MapMixin,
+            _WidgetsMixin,
 
-            // configMixin should be right before _ControllerBase so it is
-            // called first to initialize the config object
+            _WebMapMixin,
             _ConfigMixin,
-
-            // controller base needs to be last
             _ControllerBase
-        ]);
-        var app = new App();
-        app.startup();
+        ]))();
+        controller.startup();
     });
 })();

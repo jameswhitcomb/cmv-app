@@ -82,12 +82,12 @@ module.exports = function (grunt) {
         },
 
         eslint: {
-            build: {
-                src: ['viewer/**/*.js'],
-                options: {
-                    eslintrc: '.eslintrc'
-                }
-            }
+            //build: {
+            //    src: ['viewer/**/*.js'],
+            //    options: {
+            //        eslintrc: '.eslintrc'
+            //    }
+            //}
         },
 
         uglify: {
@@ -95,7 +95,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'dist/viewer',
-                    src: ['**/*.js', '!**/config/**'],
+                    src: ['**/*.js', '!**/config/**', '!**/jsapi/**', '!**/proxy/**'],
                     dest: 'dist/viewer',
                     ext: '.js'
                 }],
