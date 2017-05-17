@@ -31,3 +31,366 @@
 .cmv .jimu-widget-measure .dijitNumberTextBox {
     width: 70px !important;
 }
+
+
+
+/**********************************************
+        GeoBase Viewer Overrides - BEGIN
+ **********************************************/
+
+/*   Header ...   */
+.appHeader {
+    background: url("../images/geobase/linen.jpg") repeat-x scroll left top transparent;
+}
+.appHeader .headerLinks {
+    top: 24px;
+    white-space: nowrap;
+}
+.appHeader .headerLinks div {
+    display: inline-block;
+    padding: 0px 6px;
+}
+
+/*   Help widget...   */
+#helpDijit a {
+    text-decoration: none;
+}
+#helpDijit a::before {
+    font-family: FontAwesome;
+    content: "\f059";
+	padding-right: 4px;
+}
+
+/*   Basemap widget in heatder area...   */
+.flat .dijitButton .dijitButtonNode, .flat .dijitComboButton .dijitButtonNode, .flat .dijitDropDownButton .dijitButtonNode, .flat .dijitToggleButton .dijitButtonNode {
+    border: none;
+    line-height: 20px;
+    cursor: pointer;
+    padding: 0px;
+}
+.flat .dijitButton .dijitButtonNode, .flat .dijitDropDownButton .dijitButtonNode, .flat .dijitComboButton .dijitButtonNode, .flat .dijitToggleButton .dijitButtonNode, .flat .dijitComboBox .dijitButtonNode, .flat .dijitSpinnerButtonContainer.dijitButtonNode, .flat .dijitSelect .dijitButtonNode {
+    background: none;
+    background-image: none;
+}
+.appHeader #basemaps_widget, .appHeader #basemapsDijit {
+	position: relative;
+	top: -4px;
+}
+.appHeader #basemaps_widget .dijitButtonText, .appHeader #basemapsDijit .dijitButtonText {
+	margin-top: 2px;
+}
+.appHeader #basemaps_widget .dijitArrowButtonInner, .appHeader #basemapsDijit .dijitArrowButtonInner {
+	margin: 4px 0 0 -4px;
+	font-size: x-large;
+}
+
+/* zoom slider, home, and locate tools... */
+.esriSimpleSliderIncrementButton, .esriSimpleSliderDecrementButton {
+    background-color: rgba(0,0,0,0.4);
+}
+.esriSimpleSliderIncrementButton:hover, .esriSimpleSliderDecrementButton:hover {
+    background-color: #232B4F;
+}
+.esriSimpleSliderTL {
+	top: 48px;
+	left: 8px;
+}
+#mapButtons_widget .jimu-widget-frame {
+	height: auto;
+	width: auto;
+	overflow: visible;
+}
+#mapButtons_widget.jimu-panel.jimu-container {
+	height: 0px;
+	width: 0px;
+	overflow: visible;
+}
+.jimu-widget-homebutton .HomeButton .home, .jimu-widget-mylocation .place-holder {
+	background-color: rgba(0,0,0,0.4);
+}
+.jimu-widget-homebutton .HomeButton .home:hover, .jimu-widget-mylocation .place-holder:hover {
+	background-color: #232B4F;
+}
+.jimu-widget-mylocation .place-holder.tracking, .jimu-widget-homebutton.inHome .HomeButton .home {
+    background-color: rgba(0,0,0,0.4);
+}
+#WABMyLocation {
+	position: relative;
+	left: 40px;
+	top: -40px;
+}
+
+/*   collapsed tools menu at startup...   */
+.sidebarleftCollapseButton .open::before {
+    content: "\f0ae";
+	color: #FFF;
+}
+.sidebarleftCollapseButton .close::before {
+	color: #FFF;
+	margin-left: 3px;
+}
+.sidebarleftCollapseButton {
+	background-color: rgba(0,0,0,0.4);
+}
+.sidebarleftCollapseButton:hover {
+	background-color: #232B4F;
+}
+.sidebarCollapseButtonHorz {
+    width: 24px;
+    height: 26px;
+    border-radius: 0px 5px 5px 0px;
+}
+.sidebarleftCollapseButton {
+	top: 124px;
+	margin-left: 1px;
+}
+#sidebarLeft_splitter {
+	background-color: rgba(0,0,0,0.025);
+}
+.flat .dijitSplitterV .dijitSplitterThumb {
+    background: #000;
+}
+
+/*   bottom area collapse button...   */
+.sidebarbottomCollapseButton .close::before, .sidebarbottomCollapseButton .open::before {
+	color: #FFF;
+}
+.sidebarbottomCollapseButton {
+	background-color: rgba(0,0,0,0.4);
+}
+.sidebarbottomCollapseButton:hover {
+	background-color: #232B4F;
+}
+#sidebarBottom_splitter {
+	background-color: rgba(0,0,0,0.025);
+}
+.flat .dijitSplitterH .dijitSplitterThumb {
+    background: #000;
+}
+
+/* widget containiers in panel...  */
+.flat .dijitTitlePaneTitle {
+    margin: 1px;
+    background-color: #F2F2F2;
+}
+.flat .dijitTitlePaneTextNode {
+  color: #232B4F;
+}
+.flat .dijitTitlePaneTitle:hover {
+    background-color: #BFBFBF;
+}
+.flat .dijitTitlePaneTitleOpen {
+    background-color: #BFBFBF;
+}
+
+/* show tool icons in widget pannel...  */
+.dijitTitlePane .dijitTitlePaneTextNode:before,
+.dijitDialogTitleBar:before {
+    font-family:'FontAwesome';
+    margin-right: 8px;
+    color: #232B4F;
+}
+.floatingWidgetPopout::before, .floatingWidgetDock::before{
+    font-size: 10px;
+    color: #232B4F;
+}
+.fa-location-arrow::before {
+    content: "\f05b";
+    top: -2px;
+    position: relative;
+    font-size: 14px;
+}
+#bookmarks_parent .dijitTitlePaneTextNode:before {
+    content: '\f02e'
+}
+#directions_parent .dijitTitlePaneTextNode:before {
+    content: '\f277'
+}
+#draw_parent .dijitTitlePaneTextNode:before {
+    content: '\f1fc'
+}
+#editor_parent .dijitTitlePaneTextNode:before {
+    content: '\f040'
+}
+#find_parent .dijitTitlePaneTextNode:before {
+    content: '\f002';
+}
+#help_parent .dijitTitlePaneTextNode:before {
+    content: '\f059'
+}
+#identify_parent .dijitTitlePaneTextNode:before {
+    content: '\f05a'
+}
+#layerControl_parent .dijitTitlePaneTextNode:before{
+    content: '\f00b';
+}
+#legend_parent .dijitTitlePaneTextNode:before {
+    content: '\f03e'
+}
+#measurement_parent .dijitTitlePaneTextNode:before {
+    content: '\f065'
+}
+#print_parent .dijitTitlePaneTextNode:before {
+    content: '\f02f';
+}
+#streetview_parent .dijitTitlePaneTextNode:before {
+    content: '\f21d';
+}
+#wabdraw_parent .dijitTitlePaneTextNode:before {
+    content: '\f14b';
+}
+#search_parent .dijitTitlePaneTextNode:before {
+    content: '\f002';
+}
+#zoomToFeature_parent .dijitTitlePaneTextNode:before {
+    content: '\f00e';
+}
+#query_parent .dijitTitlePaneTextNode:before {
+    content: '\f1fd';
+}
+#alohaThreat_parent .dijitTitlePaneTextNode:before {
+    content: '\f140';
+}
+#nexrad_parent .dijitTitlePaneTextNode:before {
+    content: '\f0c2';
+}
+
+/*   logo on map overlay...   */
+.map .logo-med {
+    background: url(../images/geobase//powered_by_geobase.png) no-repeat center center;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    cursor: default;
+    height: 67px;
+    width: 67px;
+}
+
+/*   coordinate locate tool in coodrds widget...   */
+/*
+.jimu-widget-coordinate .coordinate-locate-container {
+  display: none !important;
+}
+*/
+.jimu-widget-coordinate .coordinate-background {
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 0px 5px 0px 0px;
+}
+.jimu-widget-coordinate .coordinate-background:hover {
+    background-color: #232B4F;
+    border-radius: 0px 5px 0px 0px;
+}
+
+/*   overview map widget...   */
+.ovwButton.ovwController {
+    border-top: solid 2px #232B4F;
+    border-left: solid 2px #232B4F;
+    border-radius: 5px 0px 0px 0px;
+}
+.esriOverviewMap.ovwBR .ovwContainer {
+    border-top: solid 2px #232B4F;
+    border-left: solid 2px #232B4F;
+    border-radius: 5px 0px 0px 0px;
+}
+
+/*   move geocode/serach to header area...   */
+#headerSearch, #geocoderButton {
+    display: inline-block !important;
+}
+#headerSearch {
+    position: relative;
+    left: 96px;
+    top: 18px;
+}
+
+/*   map info popups...   */
+.esriPopup .titlePane {
+    background-color: rgb(34,42,78);
+}
+.esriPopup .pointer.top {
+    background-color: rgb(34,42,78);
+}
+.esriPopup .contentPane {
+    background-color: rgba(255,255,255,0.95);
+}
+.esriPopup .actionsPane {
+    background-color: rgba(255,255,255,0.95);
+}
+
+/*   bookmark button styles...   */
+div.esriBookmarkItem.esriAddBookmark {
+	margin: 6px;
+}
+div.esriBookmarkItem.esriAddBookmark:hover {
+	background-color: transparent;
+}
+div.esriBookmarkItem.esriAddBookmark > div{
+	padding: 2px 8px;
+	display: inline-block;
+	float: right;
+	background-color: #cccccc;
+	background-color: rgba(0,0,0,0.025);
+	border-radius: 5px;
+	color: #232B4F;
+	margin: 4px 12px;
+	width: auto;
+	text-align: right;
+	cursor: pointer;
+}
+div.esriBookmarkItem.esriAddBookmark > div:hover {
+	background-color: #232B4F;
+	color: #FFFFFF;
+}
+.esriBookmarkItem {
+    width: 100%;
+    height: 20px;
+    padding: 0;
+}
+.esriBookmarkItem:hover {
+    padding: 0;
+  	background-color: rgba(0,0,0,0.25);
+  	border-radius: 5px;
+}
+
+/*   locate coordinate, editor button styles...   */
+#coordinateFind_widget .dijitButton, #editor_widget .danger.dijitButton, #editor_widget .success.dijitButton {
+	padding: 2px 8px;
+	background-color: #cccccc;
+	background-color: rgba(0,0,0,0.2);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	color: #232B4F;
+
+}
+#coordinateFind_widget .dijitButton:hover, #editor_widget .danger.dijitButton:hover, #editor_widget .success.dijitButton:hover {
+	background-color: #232B4F;
+	color: #FFFFFF;
+}
+
+/*  Growler messages ...   */
+.growlClose {
+    float: right;
+}
+.growlClose:before {
+    font-family:'FontAwesome';
+    content: '\f057';
+	font-size: 16px;
+}
+.gis-dijit-Growl .growl h3 {
+	padding-bottom: 6px;
+	border-bottom: solid 1px rgba(0,0,0,0.2);
+	margin-bottom: 8px !important;
+}
+
+
+/*  Basemaps Menu ...   */
+.dijitMenuItemActive td, .flat .dijitMenuItemHover, .flat .dijitMenuItemHover td, .flat .dijitMenuItemSelected, .flat .dijitMenuItemSelected td {
+	background-color: #232B4F;
+	color: #FFFFFF;
+}
+
+/**********************************************
+         END - GeoBase Viewer Overrides
+ **********************************************/

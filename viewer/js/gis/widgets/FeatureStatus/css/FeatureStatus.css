@@ -1,0 +1,188 @@
+/* title pane icon */
+#featureStatus_parent .dijitTitlePaneTextNode:before {
+    content: '\f0e4'
+}
+
+/* DEFAULT/UNKNOWN Status value...         */
+
+#growler_widget td:before {
+	color: #000000;
+	content: '\f059';
+}
+
+/* *************************************** */
+
+/*           STATUS VALUES...              */
+
+/* *************************************** */
+
+
+#growler_widget td.BOMB:before {
+	color: #000000;
+	/* bomb icon */
+	content: '\f1e2';  
+}
+#growler_widget td.SAD:before {
+	color: #FF0000;
+	/* sad face */
+	content: '\f119';
+}
+#growler_widget td.MEH:before {
+	color: #FFFF00;
+	/* meh face */
+	content: '\f11a';
+}
+#growler_widget td.HAPPY:before {
+	color: #00FF00;
+	/* happy face */
+	content: '\f118';
+}
+#growler_widget td.RED:before {
+	color: #FF0000;
+	/* circle */
+	content: '\f111';
+}
+#growler_widget td.YELLOW:before {
+	color: #FFFF00;
+	/* circle */
+	content: '\f111';
+}
+#growler_widget td.GREEN:before {
+	color: #00FF00;
+	/* circle */
+	content: '\f111';
+}
+
+
+
+/* title pane content styles... */
+.FeatureStatusDijit label {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.FeatureStatusDijit div,
+.FeatureStatusDijit strong {
+    display: block;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+.FeatureStatusDijit div.sbtTools {
+    margin-bottom: 0;
+    padding: 5px;
+    width: 100%;
+    overflow: auto;
+}
+
+.FeatureStatusDijit div.sbtTools div {
+    text-align: center;
+}
+
+.FeatureStatusDijit div.sbtTools strong {
+	font-size: 12px;
+	font-weight: normal;
+    display: block;
+    padding: 0 0 6px;
+}
+
+.FeatureStatusDijit div.sbtHelp {
+	font-size: 14px;
+	font-weight: normal;
+    overflow: auto;
+    padding: 12px 6px 0 6px;
+}
+
+.FeatureStatusDijit div.sbtHelp ul {
+	font-size: 12px;
+	font-weight: normal;
+    list-style: outside none square;
+    margin: 12px 0 0 -12px;
+}
+
+.FeatureStatusDijit div.sbtHelp strong {
+	font-size: 12px;
+	font-weight: normal;
+    border-bottom: 1px solid #232B4F;
+    display: block;
+    padding: 0 0 6px;
+}
+
+.FeatureStatusDijit label ,
+.FeatureStatusDijit button[type="submit"] {
+    float: left;
+}
+
+.FeatureStatusDijit .toolIcon {
+    cursor: pointer;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    background-repeat: no-repeat;
+    background-position: center center;
+	background-size: auto 36px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.FeatureStatusDijit .toolIcon:not(.actionTool).active {
+	background-color: #d3d3d3;
+	border: 1px solid #d3d3d3;
+}
+
+.FeatureStatusDijit .selectIcon {
+	display: inline-block;
+	float: right;
+	margin-right: 12px;
+	margin-top: -24px;
+}
+
+.FeatureStatusDijit .selectIcon:after {
+	color: #66696C;
+    font-size: 14px;
+	font-family:'FontAwesome';
+	content: '\f245';
+	vertical-align: sub;
+	padding-left: 4px;
+}
+
+
+/*  Growler messages override styles ...   */
+.growlClose {
+    float: right;
+}
+.growlClose:before {
+    font-family:'FontAwesome';
+    content: '\f057';
+	font-size: 16px;
+}
+.gis-dijit-Growl .growl h3 {
+	padding-bottom: 6px;
+	border-bottom: solid 1px rgba(0,0,0,0.2);
+	margin-bottom: 8px !important;
+}
+#growler_widget table {
+	margin-top: 4px;
+    border-collapse: collapse;
+	min-width: 150px;
+}
+#growler_widget th {
+	border: solid 1px #000000;
+	background-color: #F2F2F2;
+	padding: 4px;
+}
+#growler_widget td {
+    height: 30px;
+	width: 30px;
+	border: solid 1px #000000;
+	text-align: center;
+	background-color: #BFBFBF;
+	padding: 4px;
+    font-size: 24px;
+	font-family:'FontAwesome';
+}

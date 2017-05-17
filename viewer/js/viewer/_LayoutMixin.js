@@ -9,6 +9,7 @@ define([
     'dojo/query',
     'dojo/dom-style',
     'dojo/dom-class',
+    'dojo/dom-attr',
     'dojo/dom-geometry',
     'dojo/sniff',
     'dojo/Deferred',
@@ -32,6 +33,7 @@ define([
     domQuery,
     domStyle,
     domClass,
+    domAttr,
     domGeom,
     has,
     Deferred,
@@ -133,6 +135,13 @@ define([
             }
             if (titles.pageTitle) {
                 document.title = titles.pageTitle;
+            }
+            if (titles.logoSource) {
+                domAttr.set('headerLogoImage', 'src', titles.logoSource);
+            }
+            if (titles.logoHref) {
+                domAttr.set('headerLogoHref', 'href', titles.logoHref);
+                if (titles.logoTitle) domAttr.set('headerLogoHref', 'title', titles.logoTitle);
             }
         },
         // setup all the sidebar panes

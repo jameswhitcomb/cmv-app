@@ -5,7 +5,7 @@ define({
     queries: [
         {
             description: 'Find Building',
-            url: 'http://ags103vm.whitcomb.dev/arcgis/rest/services/afmc_cip/MapServer',
+            url: 'http://geobase-dev.local/arcgis/rest/services/afmc_cip/MapServer',
             layerIds: [1],
             searchFields: ['buildingNumber', 'alternateBuildingNumber', 'narrative', 'installationName'],
             minChars: 3,

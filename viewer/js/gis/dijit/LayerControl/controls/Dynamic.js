@@ -6,6 +6,8 @@ define([
     'dojo/topic',
     'dojo/query',
     'dojo/dom-construct',
+    'dojo/dom-style',
+    'dojo/dom-class',
     'dojo/dom-attr',
     'dijit/registry',
     'dijit/_WidgetBase',
@@ -26,6 +28,8 @@ define([
     topic,
     query,
     domConst,
+    domStyle,
+    domClass,
     domAttr,
     registry,
     _WidgetBase,
@@ -161,6 +165,9 @@ define([
                     }
                     control.startup();
                     this._sublayerControls.push(control);
+					// JW - Add code to hide the non-functional context menu for sub layers
+	                domClass.remove(control.menuNode, 'fa, fa-bars, layerControlMenuIcon, ' + this.icons.menu);
+	                domStyle.set(control.menuClickNode, 'cursor', 'default');
                 }));
             }
         },
@@ -182,8 +189,8 @@ define([
             var layer = this.layer,
                 setLayers = [];
             array.forEach(query('.' + layer.id + '-layerControlSublayerCheck'), function (i) {
-                if (domAttr.get(i, 'data-checked') === 'checked') {
-                    setLayers.push(parseInt(domAttr.get(i, 'data-sublayer-id'), 10));
+                if (i.attributes['data-checked'].value === 'checked') {
+                    setLayers.push(parseInt(i.attributes['data-sublayer-id'].value, 10)); // JW - chnaged to avoid use of domAttr.get
                 }
             });
             array.forEach(layer.layerInfos, function (info) {

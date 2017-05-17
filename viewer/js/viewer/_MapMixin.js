@@ -3,6 +3,8 @@ define([
     'dojo/_base/lang',
     'dojo/on',
     'dojo/dom',
+    'dojo/query',
+    'dojo/dom-attr',
     'dojo/_base/array',
     'dojo/Deferred',
 
@@ -15,6 +17,8 @@ define([
     lang,
     on,
     dom,
+    domQuery,
+    domAttr,
     array,
     Deferred,
 
@@ -226,6 +230,14 @@ define([
 
                 // resolve the map deferred
                 this.mapDeferred.resolve(this.map);
+
+	            // update map logo...
+	            setTimeout(function () {
+	                var mapLogo = domQuery('.map .logo-med')[0];
+	                domAttr.remove(mapLogo, 'title');
+	                var clone = mapLogo.cloneNode();
+	                mapLogo.parentNode.replaceChild(clone, mapLogo);
+	            }, 5000);
             }
 
         },

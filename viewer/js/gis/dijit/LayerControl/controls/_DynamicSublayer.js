@@ -73,7 +73,7 @@ define([
                     event.stopPropagation();
                 }
 
-                if (domAttr.get(checkNode, 'data-checked') === 'checked') {
+                if (event.target.attributes['data-checked'].value === 'checked') { // JW - chnaged to avoid use of domAttr.get
                     this._setSublayerCheckbox(false, checkNode);
                 } else {
                     this._setSublayerCheckbox(true, checkNode);

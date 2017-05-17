@@ -1,0 +1,40 @@
+﻿<div class="gis_MeasurementDijit">
+    <div class="formContainer">
+        <div data-dojo-attach-point="measureWidgetDom"></div>
+
+        <div dojotype="dijit.layout.ContentPane" data-dojo-attach-point="sectionHeader" data-dojo-props="'class': 'section'">${i18n.coordSectionText}</div>
+
+        <div class="contentCenter">
+            <div data-dojo-type="dijit/form/Form" data-dojo-attach-point="coordFormDijit" id="coordForm" data-dojo-id="coordForm">
+                <select data-dojo-type="dijit/form/Select" data-dojo-props="name:'coordType','class': 'coordSelect'" data-dojo-attach-point="coordTypeSelectDijit" data-dojo-attach-event="onChange:onCoordTypeChange">
+                    <option value="DD" selected="selected">Decimal Degrees</option>
+                    <option value="DMS">Degrees Minutes Seconds</option>
+                </select>
+
+                <div data-dojo-attach-point="ddBlock" style="height:30px; display:block">
+                    <label>${i18n.xCoordText.label}:</label>
+                    <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="xCoordDijit" data-dojo-props="name:'xCoord',trim:true,value:'',regExp:'^[-+]?\\d*\\.?\\d*$', invalidMessage:'Invalid Value.','class':'coordText'" />
+
+                    <label>${i18n.yCoordText.label}:</label>
+                    <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="yCoordDijit" data-dojo-props="name:'yCoord',trim:true,value:'',regExp:'^[-+]?\\d*\\.?\\d*$', invalidMessage:'Invalid Value.','class':'coordText'" /><br />
+                </div>
+
+                <div data-dojo-attach-point="dmsBlock" style="height:0px; display:none">
+                    <label>${i18n.lonCoordText.label}:</label><br />
+                    <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="degLongCoordDijit" data-dojo-props="name:'degLongCoord',trim:true,value:'',regExp:'^[-+]?\\d+$', invalidMessage:'Invalid Value.','class':'coordText2'" />
+                    <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="minLongCoordDijit" data-dojo-props="name:'minLongCoord',trim:true,value:'',regExp:'^\\d+$', invalidMessage:'Invalid Value.','class':'coordText2'" />
+                    <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="secLongCoordDijit" data-dojo-props="name:'secLongCoord',trim:true,value:'',regExp:'^[-+]?\\d*\\.?\\d*$', invalidMessage:'Invalid Value.','class':'coordText2'" /><br />
+
+                    <label>${i18n.latCoordText.label}:</label><br />
+                    <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="degLatCoordDijit" data-dojo-props="name:'degLatCoord',trim:true,value:'',regExp:'^[-+]?\\d+$', invalidMessage:'Invalid Value.','class':'coordText2'" />
+                    <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="minLatCoordDijit" data-dojo-props="name:'minLatCoord',trim:true,value:'',regExp:'^\\d+$', invalidMessage:'Invalid Value.','class':'coordText2'" />
+                    <input type="text" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="secLatCoordDijit" data-dojo-props="name:'secLatCoord',trim:true,value:'',regExp:'^[-+]?\\d*\\.?\\d*$', invalidMessage:'Invalid Value.','class':'coordText2'" /><br />
+                </div>
+
+                <button data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'fa fa-plus fa-fw', disabled: true" data-dojo-attach-event="onClick:addCoord" data-dojo-attach-point="addCoordinateDijit">Add</button>
+                <!--<button data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'fa fa-check fa-fw', disabled: true" data-dojo-attach-event="onClick:endCoord" data-dojo-attach-point="endCoordinateDijit">Add/End</button>-->
+            </div>
+            
+        </div>
+    </div>
+</div>

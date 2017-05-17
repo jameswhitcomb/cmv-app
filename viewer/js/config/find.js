@@ -4,95 +4,78 @@ define([
 ], function (i18n) {
 
     return {
-        map: true,
-        zoomExtentFactor: 2,
+    	map: true,
         queries: [
             {
-                description: i18n.find.louisvillePubSafety,
-                url: 'https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyOperationalLayers/MapServer',
-                layerIds: [1, 2, 3, 4, 5, 6, 7],
-                searchFields: ['FDNAME, PDNAME', 'NAME', 'RESNAME'],
+                description: 'Buildings',
+                url: 'https://geobase-dev.local/arcgis/rest/services/afmc_cip_dyn/MapServer',
+                layerIds: [ 1 ],
+                searchFields: [ 'BUILDINGNUMBER', 'SDSFEATURENAME' ],
                 minChars: 2,
+                prompt: 'Bldg# or name',
                 gridColumns: [
-                    {
-                        field: 'Name',
-                        label: 'Name'
-                    },
-                    {
-                        field: 'layerName',
-                        label: 'Layer',
-                        width: 100,
-                        sortable: false,
-                        resizable: false
-                    }
+                    { field: 'BUILDINGNUMBER', label: 'Building No.', resizable: false, width: 75, visible: true },
+                    { field: 'SDSFEATURENAME', label: 'Name', visible: true, get: function ( result ) {
+                        var name = result.feature.attributes.SDSFEATURENAME;
+                        if ( result.feature.attributes.BUILDINGSTATUS !== 'EXISTING' ) {
+                            name += ' ( ' + result.feature.attributes.BUILDINGSTATUS + ' )';
+                        }
+                        return name;
+                    } }
                 ],
                 sort: [
                     {
-                        attribute: 'Name',
+                        attribute: 'BUILDINGNUMBER',
                         descending: false
-                    }
-                ],
-                prompt: 'fdname, pdname, name or resname',
-                selectionMode: 'single'
-            },
-            {
-                description: i18n.find.sf311Incidents,
-                url: 'https://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyOperationalLayers/MapServer',
-                layerIds: [15, 17, 18],
-                searchFields: ['FCODE', 'DESCRIPTION'],
-                minChars: 4,
-                gridColumns: [
-                    {
-                        field: 'layerName',
-                        label: 'Layer',
-                        width: 100,
-                        sortable: false,
-                        resizable: false
-                    },
-                    {
-                        field: 'Fcode',
-                        label: 'Fcode',
-                        width: 100
-                    },
-                    {
-                        field: 'Description',
-                        label: 'Descr'
-                    },
-                    {
-                        field: 'SORT_VALUE',
-                        visible: false,
-                        get: function (findResult) {
-                            return findResult.layerName + ' ' + findResult.feature.attributes.Fcode; //seems better to use attributes[ 'Fcode' ] but fails build.  Attribute names will be aliases and may contain spaces and mixed cases.
-                        }
-                    }
-                ],
-                sort: [
-                    {
-                        attribute: 'SORT_VALUE',
-                        descending: false
-                    }
-                ],
-                prompt: 'fdname, pdname, name or resname',
-                customGridEventHandlers: [
-                    {
-                        event: '.dgrid-row:click',
-                        handler: function (event) {
-                            alert('You clicked a row!');
-                            console.log(event);
-                        }
                     }
                 ]
             }
+			/*
+			,
+            {
+                description: 'Building Entrances',
+                url: 'https://localhost/arcgis/rest/services/BuildingEntrances/MapServer',
+                layerIds: [ 0 ],
+                searchFields: [ 'BUILDING_DOOR_SEARCH' ],
+                minChars: 2,
+                prompt: 'Bldg# Door#',
+                gridColumns: [
+                    { field: 'EQUIPMENT', label: 'Equipment No', resizable: false, width: 75 },
+                    { field: 'BUILDING', label: 'Building', resizable: false, width: 75 },
+                    { field: 'FLOOR', label: 'Floor', resizable: false, width: 50 },
+                    { field: 'ASSET_NO', label: 'Door No', resizable: false, width: 50 },
+                    { field: 'SORT_VAL', visible: false, get: function ( item ) {
+                        return String( '0000' + item.feature.attributes.ASSET_NO ).slice( -4 );
+                    } }
+                ],
+                sort: [
+                    {
+                        attribute: 'SORT_VAL',
+                        descending: false
+                    }
+                ],
+                customGridEventHandlers: [
+                    {
+                        event: 'dgrid-select',
+                        handler: function ( event ) {
+                            var result = event.rows;
+                            console.log( result );
+                        }
+                    }
+                ],
+                selectionMode: 'single'
+            }
+			*/
         ],
         selectionSymbols: {
             polygon: {
                 type: 'esriSFS',
                 style: 'esriSFSSolid',
-                color: [255, 0, 0, 62],
+                color: [ 255, 0, 0, 62 ],
                 outline: {
                     type: 'esriSLS',
                     style: 'esriSLSSolid',
-                    color: [255, 0, 0, 255],
+                    color: [ 255, 0, 0, 255 ],
                     width: 3
                 }
             },
@@ -100,14 +83,14 @@ define([
                 type: 'esriSMS',
                 style: 'esriSMSCircle',
                 size: 25,
-                color: [255, 0, 0, 62],
+                color: [ 255, 0, 0, 62 ],
                 angle: 0,
                 xoffset: 0,
                 yoffset: 0,
                 outline: {
                     type: 'esriSLS',
                     style: 'esriSLSSolid',
-                    color: [255, 0, 0, 255],
+                    color: [ 255, 0, 0, 255 ],
                     width: 2
                 }
             }

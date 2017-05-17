@@ -173,15 +173,15 @@ define([
             }
 
             if (layer.visible) {
-                this._setLayerCheckbox(layer, checkNode);
-                layer.hide();
+                layer.hide(); // JW - swapped the order of this... 
+                this._setLayerCheckbox(layer, checkNode); // JW - ...and this line to resolve layer toggle issues
                 topic.publish('layerControl/layerToggle', {
                     id: layer.id,
                     visible: layer.visible
                 });
             } else {
-                this._setLayerCheckbox(layer, checkNode);
-                layer.show();
+                layer.show(); // JW - swapped the order of this... 
+                this._setLayerCheckbox(layer, checkNode); // JW - ...and this line to resolve layer toggle issues
                 topic.publish('layerControl/layerToggle', {
                     id: layer.id,
                     visible: layer.visible
@@ -265,7 +265,7 @@ define([
         // anything the widget may need to do after visibility change
         _visibilityChange: function (r) {
             // if the checkbox doesn't match layer visibility correct it by calling _setLayerCheckbox
-            if ((r.visible && domAttr.get(this.checkNode, 'data-checked') === 'unchecked') || (!r.visible && domAttr.get(this.checkNode, 'data-checked') === 'checked')) {
+            if ((r.visible && this.checkNode.attributes['data-checked'].value === 'unchecked') || (!r.visible && this.checkNode.attributes['data-checked'].value === 'checked')) { // JW - chnaged to avoid use of domAttr.get
                 this._setLayerCheckbox(this.layer, this.checkNode);
             }
         },

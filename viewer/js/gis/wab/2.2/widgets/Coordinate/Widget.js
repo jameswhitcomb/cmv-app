@@ -30,6 +30,7 @@ define([
     "dijit/MenuItem",
     "dojo/aspect",
     "dojo/Deferred",
+    'dojo/topic',
     "esri/request",
     "esri/graphic",
     "esri/layers/GraphicsLayer",
@@ -57,6 +58,7 @@ define([
     MenuItem,
     aspect,
     Deferred,
+	topic,
     esriRequest,
     Graphic,
     GraphicsLayer,
@@ -468,10 +470,14 @@ define([
 
       disableWebMapPopup: function() {
         this.map.setInfoWindowOnClick(false);
+		// JW - Replaced the above with the following CMV friendly publish directive
+	  	topic.publish('mapClickMode/setCurrent', 'locatecCoordinate');
       },
 
       enableWebMapPopup: function() {
         this.map.setInfoWindowOnClick(true);
+		// JW - Replaced the above with the following CMV friendly publish directive
+		topic.publish('mapClickMode/setDefault');
       },
 
       onLocateButtonClick: function() {
@@ -728,7 +734,9 @@ define([
       },
 
       _displayOnClient: function(mapPoint) {
-        var outUnit = this.selectedItem.get('outputUnit');
+        //var outUnit = this.selectedItem.get('outputUnit');
+		// JW - Force MGRS output for GeoBase viewer
+        var outUnit = "MGRS";
 
         var x = mapPoint.x,
           y = mapPoint.y;

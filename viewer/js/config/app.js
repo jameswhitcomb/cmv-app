@@ -1,6 +1,7 @@
 (function () {
     var path = location.pathname.replace(/[^\/]+$/, '');
     window.dojoConfig = {
+		locale: 'en-us',
         async: true,
         packages: [
             {
@@ -10,6 +11,12 @@
                 name: 'gis',
                 location: path + 'js/gis'
             }, {
+                name: 'config',
+                location: path + 'js/config'
+            }, {
+            	name: 'widgets',
+            	location: path + 'js/gis/widgets'
+			}, {
                 name: 'proj4js',
                 location: path + 'js/libs/proj4js-2.3.15'
             }, {
@@ -23,22 +30,16 @@
 		        name: 'xstyle',
 		        main: 'css',
 		        location: path + 'js/libs/xstyle-0.3.2'
-		    }, {
-	            name: 'widgets',
-	            location: path + 'js/gis/widgets'
-	        }, {
-	            name: 'jimu',
-	            location: path + 'js/gis/wab/2.3/jimu.js'
-	        }, {
-	            name: 'libs',
-	            location: path + 'js/gis/wab/2.3/libs'
-	        }, {
-	            name: 'wabwidgets',
-	            location: path + 'js/gis/wab/2.3/widgets'
-	        }, {
-                name: 'config',
-                location: path + 'js/config'
-            }
+			}, {
+			    name: 'jimu',
+			    location: path + 'js/gis/wab/2.3/jimu.js'
+			}, {
+			    name: 'libs',
+			    location: path + 'js/gis/wab/2.3/libs'
+			}, {
+			    name: 'wabwidgets',
+			    location: path + 'js/gis/wab/2.3/widgets'
+		    }
         ]
     };
 
@@ -56,10 +57,7 @@
         'viewer/_MapMixin', // build and manage the Map
         'viewer/_WidgetsMixin', // build and manage the Widgets
 
-        // 'viewer/_WebMapMixin' // for WebMaps
-        //'config/_customMixin',
-
-        'viewer/_WABMixin' // cusom mix-in to use WAB widgets
+	    'viewer/_WABMixin' // cusom mix-in to use WAB widgets
 
     ], function (
         declare,
@@ -70,19 +68,18 @@
         _MapMixin,
         _WidgetsMixin,
 
-        _WebMapMixin
-        //_MyCustomMixin
+	    _WABMixin
 
     ) {
-        var controller = new (declare([
-            _LayoutMixin,
-            _MapMixin,
-            _WidgetsMixin,
-
-            _WebMapMixin,
-            _ConfigMixin,
-            _ControllerBase
-        ]))();
-        controller.startup();
+        var App = declare([
+	        _LayoutMixin,
+	        _WidgetsMixin,
+	        _MapMixin,
+	        _WABMixin,
+	        _ConfigMixin,
+	        _ControllerBase
+        ]);
+        var app = new App();
+        app.startup();
     });
 })();

@@ -6,60 +6,40 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <meta name="application-name" content="cmv">
-        <meta name="description" content="CMV - The Configurable Map Viewer. Community supported open source mapping framework. Works with the Esri JavaScript API, ArcGIS Server, ArcGIS Online and more. Make it your own!">
-        <meta name="author" content="cmv.io">
-        <link rel="shortcut icon" href="./favicon.png">
-        <title>Configurable Map Viewer</title>
+        <link rel="icon" href="images/geobase/favicon.png"/>
+        <title>GeoBase Map Viewer</title>
         <link rel="stylesheet" type="text/css" href="jsapi/3.20compact/esri/css/esri.css">
         <link rel="stylesheet" type="text/css" href="js/gis/wab/2.3/jimu.js/css/jimu-theme.css">
         <link rel="stylesheet" type="text/css" href="css/theme/flat/flat.css">
-        <link rel="stylesheet" type="text/css" href="css/cmv-theme-overrides.css">
         <link rel="stylesheet" type="text/css" href="js/libs/font-awesome-4.7.0/css/font-awesome.min.css">
-		<link id="theme_cmv_style_common" rel="stylesheet" type="text/css" href="css/main.css">
-        <!-- make the flat theme look more like the original dbootstrap (optional) -->
-        <!--<link id="theme_cmv_style_common" rel="stylesheet" type="text/css" href="./cmv/css/cmv-theme-overrides.css">-->
-        <!-- needed so that jimu styles play nice with cmv -->
+        <link id="theme_cmv_style_common" rel="stylesheet" type="text/css" href="css/main.css">
+        <!--link id="theme_cmv_style_common" rel="stylesheet" type="text/css" href="css/cmv-theme-overrides.css"-->
         <link rel="stylesheet" type="text/css" href="css/cmv-jimu.css">
-        <!-- some css tweaks for WAB widgets (optional) -->
         <link rel="stylesheet" type="text/css" href="css/cmv-wab.css">
     </head>
     <body class="cmv flat">
         <div class="appHeader">
             <div class="headerLogo">
-                <img alt="logo" src="images/rocket-logo.png" height="54" />
+                <a href='/' title='' id='headerLogoHref'><img alt="logo" src="images/geobase/geobase.png" height="54" id="headerLogoImage"/></a>
             </div>
             <div class="headerTitle">
-                <span id="headerTitleSpan">
-                    Configurable Map Viewer
-                </span>
-                <div id="subHeaderTitleSpan" class="subHeaderTitle">
-                    make it your own
-                </div>
+                <span id="headerTitleSpan">GeoBase</span>
+                <div id="subHeaderTitleSpan" class="subHeaderTitle"></div>
             </div>
-            <div class="search">
-                <div id='geocodeDijit'>
-                </div>
-            </div>
+			<div id="headerSearch">
+			    <div id="geocoderButton" style="display: inline-text;float-left;"></div>
+			</div>
             <div class="headerLinks">
-                <div id="helpDijit">
-                </div>
+			    <div id="geocoderButton" style="display: inline-text;float-left;"></div>
+                <div id="helpDijit"></div> | 
+                <div id="basemapsDijit"></div>
             </div>
         </div>
-        <script type="text/javascript">
-            var s = window.location.search, q = s.match(/locale=([^&]*)/i);
-            var locale = (q && q.length > 0) ? q[1] : null;
-            window.dojoConfig = {
-                locale: locale,
-                async: true
-            };
-        </script>
         <!--[if lt IE 9]>
             <script type="text/javascript" src="js/libs/es5-shim-4.0.3/es5-shim.min.js"></script>
         <![endif]-->
-        <script src="jsapi/3.20compact/init.js"></script>
+        <script type="text/javascript" src="jsapi/3.20compact/init.js"></script>
         <script src="js/config/app.js"></script>
-		<!-- needed by some wab widgets like Print -->
-		<script src="js/gis/wab/2.3/libs/caja-html-sanitizer-minified.js"></script>
+        <script src="js/gis/wab/2.3/libs/caja-html-sanitizer-minified.js"></script>
     </body>
 </html>

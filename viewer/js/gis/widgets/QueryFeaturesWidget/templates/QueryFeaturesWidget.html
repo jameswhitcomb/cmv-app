@@ -1,0 +1,84 @@
+<div>	
+	<table>
+        <tr>
+            <td colspan="2">
+                <button data-dojo-attach-event="onClick:clearResults" data-dojo-attach-point="cmdClearResults" id='${id}_cmdClearResults' data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'clearIcon'" type="button" >Clear Results</button>
+                <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'${id}_cmdClearResults'">Click to clear query results.</span></div>
+            </td>
+        </tr>
+		<tr>
+			<td>Service:</td>
+			<td>
+				<select data-dojo-attach-point="serviceSelect" id='${id}_queryFeaturesServiceSelect' data-dojo-attach-event='onChange:serviceSelectChange' data-dojo-type="dijit/form/Select" style="width: 180px;">
+				</select>
+                <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'${id}_queryFeaturesServiceSelect'">Select the service to query.</span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Layer:</td>
+			<td>
+				<select data-dojo-attach-point="layerSelect" id='${id}_queryFeaturesLayerSelect' data-dojo-attach-event='onChange:layerSelectChange' data-dojo-type="dijit/form/Select" style="width: 180px;"></select>
+                <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'${id}_queryFeaturesLayerSelect'">Select the layer to query.</span></div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Field:</td>
+			<td>
+				<select data-dojo-attach-point="queryFieldSelect" id='${id}_queryFeaturesFieldSelect' data-dojo-attach-event='onChange:fieldSelectChange' data-dojo-type="dijit/form/Select" style="width: 180px;"></select>
+                <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'${id}_queryFeaturesFieldSelect'">Select the field to query.</span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Operator:</td>
+			<td>
+				<select data-dojo-attach-point="queryOperatorSelect" id='${id}_queryFeaturesOperatorSelect' data-dojo-type="dijit/form/Select" style="width: 180px;"></select>
+                <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'${id}_queryFeaturesOperatorSelect'">Select the operator to use in the query.</span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Value:</td>
+			<td>
+				<div data-dojo-attach-point="queryValueContainer" id='${id}_queryValueSelect'></div>
+                <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'${id}_queryValueSelect'">Enter or select the value to test for in your query.</span></div>
+			</td>
+		</tr>
+
+        <tr>
+            <td>
+                <button data-dojo-attach-event="onClick:addQuery" data-dojo-attach-point='cmdAddQuery' id='${id}_cmdAddQuery' data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'add'" type="button" >Add Query</button>
+                <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'${id}_cmdAddQuery'">Click to add query definition to the list.</span></div>
+            </td>
+            <td>
+                <button data-dojo-attach-event="onClick:removeQuery" data-dojo-attach-point='cmdRemoveQuery' id='${id}_cmdRemoveQuery' data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'delete', disabled: true" type="button"  >Remove Query</button>
+                <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'${id}_cmdRemoveQuery'">Click to remove one or more query definitions from the list.</span></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <div data-dojo-type="dojox/grid/DataGrid" data-dojo-attach-point='queryGrid' data-dojo-props="autoHeight: true, autoWidth: true, autoRender: true, selectable: true, selectionMode: 'extended', noDataMessage: 'No queries defined', columnReordering: false">
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                All query parts are "ANDed" together.
+            </td>
+        </tr>
+		
+		<tr>
+		    <td>
+		        <button data-dojo-attach-event="onClick:startFeatureSearch" data-dojo-attach-point='cmdStartFeatureSearch' id='${id}_cmdStartFeatureSearch' data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'search',  disabled: true" type="button"  >Search</button>
+                <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'${id}_cmdStartFeatureSearch'">Click to start feature search.</span></div>
+		    </td>
+		    <td>
+		        <div data-dojo-attach-point='progressBarContainer'></div>
+		    </td>
+		</tr>
+	</table>
+
+	<div data-dojo-attach-point="containerNode"></div>
+
+</div>

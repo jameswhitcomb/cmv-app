@@ -220,7 +220,7 @@ define([
         onLayoutChange: function (open) {
             // end drawing on close of title pane
             if (!open) {
-                //this.endDrawing();
+                this.endDrawing();
                 if (this.mapClickMode === 'draw') {
                     topic.publish('mapClickMode/setDefault');
                 }

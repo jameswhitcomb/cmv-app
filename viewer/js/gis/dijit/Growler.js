@@ -13,7 +13,7 @@ define([
 
     // the growl itself
     var Growl = declare([_WidgetBase, _TemplatedMixin], {
-        templateString: '<div class="growl ${level}" data-dojo-attach-event="onmouseover:hoverOver,onmouseout:hoverOut,onclick:close"><h3>${title}</h3><span data-dojo-attach-point="growlMessageNode"></span></div>',
+        templateString: '<div class="growl ${level}" data-dojo-attach-event="onmouseover:hoverOver,onmouseout:hoverOut,onclick:close"><span class=growlClose></span><h3>${title}</h3><span data-dojo-attach-point="growlMessageNode"></span></div>',
         title: 'Title',
         message: 'Message',
         level: 'default',
@@ -72,6 +72,16 @@ define([
         postCreate: function () {
             this.inherited(arguments);
             this.own(topic.subscribe('growler/growl', lang.hitch(this, 'growl')));
+				
+			if (this.params.message && this.params.message.length >= 0) {
+				topic.publish('growler/growl', {
+			        title: this.params.title,
+			        message: this.params.message,
+			        level: this.params.level,
+			        timeout: this.params.timeout,
+			        opacity: this.params.opacity
+				});
+			}
         },
         growl: function (props) {
             props = props || {};

@@ -43,7 +43,7 @@ module.exports = function (grunt) {
             build: {
                 cwd: 'viewer',
                 src: ['**'],
-                dest: 'dist/viewer',
+                dest: 'dist/cmv',
                 expand: true
             }
         },
@@ -55,26 +55,26 @@ module.exports = function (grunt) {
         postcss: {
             build: {
                 expand: true,
-                cwd: 'dist/viewer',
-                src: ['**/*.css'],
-                dest: 'dist/viewer'
+                cwd: 'dist/cmv',
+                src: ['**/*.css', '!**/jsapi/**/*.css', '!**/libs/**/*.css'],
+                dest: 'dist/cmv'
             }
         },
         cssmin: {
             build: {
                 expand: true,
-                cwd: 'dist/viewer',
-                src: ['**/*.css'],
-                dest: 'dist/viewer'
+                cwd: 'dist/cmv',
+                src: ['**/*.css', '!**/jsapi/**/*.css', '!**/libs/**/*.css'],
+                dest: 'dist/cmv'
             }
         },
 
         csslint: {
             strict: {
-                src: ['viewer/**/*.css', '!viewer/css/theme/**/*.css']
+                src: ['viewer/**/*.css', '!viewer/css/theme/**/*.css', '!viewer/jsapi/**/*.css', '!viewer/js/gis/wab/**/*.css', '!viewer/js/libs/**/*.css']
             },
             lax: {
-                src: ['viewer/**/*.css', '!viewer/css/theme/**/*.css'],
+                src: ['viewer/**/*.css', '!viewer/css/theme/**/*.css', '!viewer/jsapi/**/*.css', '!viewer/js/gis/wab/**/*.css', '!viewer/js/libs/**/*.css'],
                 options: {
                     csslintrc: '.csslintrc'
                 }
@@ -82,21 +82,21 @@ module.exports = function (grunt) {
         },
 
         eslint: {
-            //build: {
-            //    src: ['viewer/**/*.js'],
-            //    options: {
-            //        eslintrc: '.eslintrc'
-            //    }
-            //}
+            build: {
+                src: ['viewer/**/*.js', '!node_modules/**',, '!viewer/jsapi/**', '!viewer/proxi/**', '!viewer/js/gis/wab/**', '!viewer/js/gis/libs/**'],
+                options: {
+                    eslintrc: '.eslintrc'
+                }
+            }
         },
 
         uglify: {
             build: {
                 files: [{
                     expand: true,
-                    cwd: 'dist/viewer',
-                    src: ['**/*.js', '!**/config/**', '!**/jsapi/**', '!**/proxy/**'],
-                    dest: 'dist/viewer',
+                    cwd: 'dist/cmv',
+                    src: ['**/*.js', '!**/config/**', '!**/jsapi/**', '!**/proxy/**', '!**/wab/**', '!**/libs/**'],
+                    dest: 'dist/cmv',
                     ext: '.js'
                 }],
                 options: {
@@ -115,7 +115,7 @@ module.exports = function (grunt) {
                 tasks: ['eslint', 'csslint']
             },
             build: {
-                files: ['dist/viewer/**'],
+                files: ['dist/cmv/**'],
                 tasks: ['eshint', 'csslint']
             }
         },
@@ -133,7 +133,7 @@ module.exports = function (grunt) {
             build: {
                 options: {
                     port: 3001,
-                    base: 'dist/viewer',
+                    base: 'dist/cmv',
                     hostname: '*',
                     protocol: 'https',
                     keepalive: true,
@@ -152,11 +152,11 @@ module.exports = function (grunt) {
         compress: {
             build: {
                 options: {
-                    archive: 'dist/viewer.zip'
+                    archive: 'dist/cmv.zip'
                 },
                 files: [{
                     expand: true,
-                    cwd: 'dist/viewer',
+                    cwd: 'dist/cmv',
                     src: ['**', '!**/dijit.css']
                 }]
             }

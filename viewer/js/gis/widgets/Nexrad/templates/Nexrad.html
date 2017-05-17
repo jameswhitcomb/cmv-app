@@ -1,0 +1,32 @@
+<div>
+    <p>Nexrad radar reflectance service courtesy of Iowa State University.  Click <a href="http://mesonet.agron.iastate.edu/ogc/" target="_blank">here</a> for details.</p>
+
+    <button data-dojo-type="dijit/form/Button"
+            data-dojo-attach-event="onClick:_startTicker"
+            data-dojo-props="iconClass:'fa fa-play fa-fw'">
+        Start
+    </button>
+    <button data-dojo-type="dijit/form/Button"
+            data-dojo-attach-event="onClick:_stopTicker"
+            data-dojo-props="iconClass:'fa fa-pause fa-fw'">
+        Stop
+    </button>
+
+    <br />
+    <span data-dojo-attach-point="timeStampTextNode" style="font-size:8pt;"></span>
+    <br />
+
+    <table cellspacing="0" cellpladding="0" border="0">
+        <tr>
+            <td>min</td>
+            <td align="right">max</td>
+        </tr>
+        <tr>
+            <td colspan="2"><img src="/js/gis/widgets/Nexrad/images/nexrad_ramp.png" alt="Reflectivity Ramp" style="border:solid black 1px" /></td>
+        </tr>
+    </table>
+
+    <p><b>Set Transparency:</b></p>
+    <div id="slider" style="width:100%;" name="slider" data-dojo-type="dijit/form/HorizontalSlider" data-dojo-props="value: 0.8, minimum: 0.0, maximum: 1.0, intermediateChanges:true, showButtons:false"
+         data-dojo-attach-event="onChange: _sliderChange"></div>
+</div>

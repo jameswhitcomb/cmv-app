@@ -24,14 +24,14 @@
     width: 200px;
     text-align: right;
     padding-right: 15px;
-    nowrap;
+    white-space: nowrap;
 }
 
 .reverse-proxy-edit .setting-table > tbody > tr > .first {
     width: 220px;
     text-align: right;
     padding-right: 15px;
-    nowrap;
+    white-space: nowrap;
 }
 
 .jimu-widget-add-layer-setting .setting-table > tbody > tr > .second,
@@ -194,7 +194,7 @@
 
 .jimu-widget-search-setting .jimu-dropmenu {
     overflow: visible;
-    padding 0 0 0 0;
+    padding: 0;
 }
 
 .popup-edit .add-field-button>.add-field-icon-btn {

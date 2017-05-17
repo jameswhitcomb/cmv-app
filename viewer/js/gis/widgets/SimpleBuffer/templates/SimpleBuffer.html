@@ -1,0 +1,56 @@
+<div class="gis_SimpleBufferDijit">
+    <div class="formContainer">
+        <div style="padding:5px;">
+			<div class="simpleBufferDijit" data-dojo-attach-point="simpleBufferDijit">
+				<div class="sbtDistance">
+					<strong>Distance</strong>
+					<div>
+						<input type="text" data-dojo-attach-point="distance" class="distance" size="8" value="500"/>
+						<select data-dojo-attach-point="unit" class="unit">
+							<option value="UNIT_FOOT">Feet</option>
+							<option value="UNIT_METER">Meters</option>
+							<option value="UNIT_STATUTE_MILE">Miles</option>
+							<option value="UNIT_KILOMETER">Kilometers</option>
+							<option value="UNIT_NAUTICAL_MILE">Nautical Miles</option>
+							<option value="UNIT_US_NAUTICAL_MILE">US Nautical Miles</option>
+						</select>
+					</div>
+				</div>
+				<div class="sbtTools">
+					<strong>Draw Mode / MGRS Location</strong>
+					<span data-dojo-attach-point="mgrspoint" class="mgrspoint toolIcon mgrsIcon" title="Click to show/hide the MGRS input.">MGRS</span>
+					<span data-dojo-attach-point="point" class="toolIcon tool pointIcon" data-tooltype="draw" data-shapetype="point" data-label="Point" title="Click to activate/deactivate the Point markup tool."></span>
+					<span data-dojo-attach-point="polyline" class="toolIcon tool polylineIcon" data-tooltype="draw" data-shapetype="polyline" data-label="Polyline" title="Click to activate/deactivate the Polyline markup tool."></span>
+					<span data-dojo-attach-point="freehandpolyline" class="toolIcon tool polylineFreeIcon" data-tooltype="draw" data-shapetype="freehandpolyline" data-label="Freehand Polyline" title="Click to activate/deactivate the Freehand Polyline markup tool."></span>
+					<span data-dojo-attach-point="rectangle" class="toolIcon tool rectangleIcon" data-tooltype="draw" data-shapetype="rectangle" data-label="Rectangle" title="Click to activate/deactivate the Rectangle markup tool."></span>
+					<span data-dojo-attach-point="ellipse" class="toolIcon tool ovalIcon" data-tooltype="draw" data-shapetype="ellipse" data-label="Circle" title="Click to activate/deactivate the Circle markup tool."></span>
+					<span data-dojo-attach-point="polygon" class="toolIcon tool polygonIcon" data-tooltype="draw" data-shapetype="polygon" data-label="Polygon" title="Click to activate/deactivate the Polygon markup tool."></span>
+					<span data-dojo-attach-point="freehandpolygon" class="toolIcon tool polygonFreeIcon" data-tooltype="draw" data-shapetype="freehandpolygon" data-label="Freehand Polygon" title="Click to activate/deactivate the Freehand Polygon markup tool."></span>
+					<span data-dojo-attach-point="featureselect" class="featureselect toolIcon selectIcon" title="Click to activate the feature select tool."></span>
+					<span data-dojo-attach-point="mgrsinput" class="mgrsinput">
+						<div>
+							<span data-dojo-attach-point="sbtClose" class="sbtClose" title="Close MGRS input."></span><span>E.g., 18SUJ23480647</span> <span class="questionIcon" data-dojo-attach-point="questionIconNode"></span>
+						</div>
+						<div class="sbtForm">
+							<input type="text" data-dojo-attach-point="sbtMGRSValue" class="sbtMGRSValue"/>
+							<button type="button" data-dojo-attach-point="sbtGosubmit" class="sbtGosubmit">go</button>
+						</div>
+					</span>
+				</div>
+				<div class="sbtActions">
+					<button type="button" data-dojo-attach-point="clearBuffers" type="button">Clear Buffers</button>
+				</div>
+				<div class="sbtHelp">
+					<strong>Tips</strong>
+					<ul class="searchTips">
+						<li>Set the distance and units of the buffer.</li>
+						<li>Select a markup tool and draw the graphic on the map.</li>
+						<li>Select the [MGRS] tool to locate a buffer by MGRS coordinates.</li>
+						<li>Select the [Feature Select] tool to locate a buffer by clicking on the feature.</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -13,12 +13,12 @@ define({
             'proxyUrl': ''
         }]
     },
-    'geometryService': 'https://utility.arcgisonline.com/arcgis/rest/services/Geometry/GeometryServer',
+    'geometryService': 'https://geobase-dev.local/arcgis/rest/services/Utilities/Geometry/GeometryServer',
     'map': {
         'id': 'map',
         '2D': true,
-        '3D': false,
+        '3D': false/*,
         'itemId': '8bf7167d20924cbf8e25e7b11c7c502c', // ESRI Streets Basemap
-        'portalUrl': 'https://www.arcgis.com/'
+        'portalUrl': 'https://www.arcgis.com/'*/
     }
 });

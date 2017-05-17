@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>README_AFMC</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(85, 85, 85); overflow: auto; background-color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(126, 126, 126); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(126, 126, 126); border-color: rgb(214, 214, 214); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(214, 214, 214); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(3, 3, 3); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(214, 214, 214); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(3, 3, 3); background-color: rgb(240, 240, 240); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(245, 245, 245); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(3, 3, 3); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(214, 214, 214) rgb(214, 214, 214) rgb(199, 199, 199); background-color: rgb(240, 240, 240); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #ffffff;
+  color: #555555;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(85, 85, 85, 0.2);
+}
+pre.editor-colors .gutter {
+  color: #555555;
+  background: #ffffff;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #e87b00;
+}
+pre.editor-colors .invisible {
+  color: #555;
+}
+pre.editor-colors .selection .region {
+  background-color: #e1e1e1;
+}
+pre.editor-colors .bracket-matcher .region {
+  background-color: #C9C9C9;
+  opacity: .7;
+  border-bottom: 0 none;
+}
+pre.editor-colors.is-focused .cursor {
+  border-color: #000000;
+}
+pre.editor-colors.is-focused .selection .region {
+  background-color: #afc4da;
+}
+pre.editor-colors.is-focused .line-number.cursor-line-no-selection,
+pre.editor-colors.is-focused .line.cursor-line {
+  background-color: rgba(255, 255, 134, 0.34);
+}
+pre.editor-colors .syntax--source.syntax--gfm {
+  color: #444;
+}
+pre.editor-colors .syntax--gfm .syntax--markup.syntax--heading {
+  color: #111;
+}
+pre.editor-colors .syntax--gfm .syntax--link {
+  color: #888;
+}
+pre.editor-colors .syntax--gfm .syntax--variable.syntax--list {
+  color: #888;
+}
+pre.editor-colors .syntax--markdown .syntax--paragraph {
+  color: #444;
+}
+pre.editor-colors .syntax--markdown .syntax--heading {
+  color: #111;
+}
+pre.editor-colors .syntax--markdown .syntax--link {
+  color: #888;
+}
+pre.editor-colors .syntax--markdown .syntax--link .syntax--string {
+  color: #888;
+}
+.syntax--comment {
+  color: #999988;
+  font-style: italic;
+}
+.syntax--string {
+  color: #D14;
+}
+.syntax--string .syntax--source,
+.syntax--string .syntax--meta.syntax--embedded.syntax--line {
+  color: #5A5A5A;
+}
+.syntax--string .syntax--punctuation.syntax--section.syntax--embedded {
+  color: #920B2D;
+}
+.syntax--string .syntax--punctuation.syntax--section.syntax--embedded .syntax--source {
+  color: #920B2D;
+}
+.syntax--constant.syntax--numeric {
+  color: #D14;
+}
+.syntax--constant.syntax--language {
+  color: #606aa1;
+}
+.syntax--constant.syntax--character,
+.syntax--constant.syntax--other {
+  color: #606aa1;
+}
+.syntax--constant.syntax--symbol {
+  color: #990073;
+}
+.syntax--constant.syntax--numeric.syntax--line-number.syntax--find-in-files .syntax--match {
+  color: rgba(143, 190, 0, 0.63);
+}
+.syntax--variable {
+  color: #008080;
+}
+.syntax--variable.syntax--parameter {
+  color: #606aa1;
+}
+.syntax--keyword {
+  color: #222;
+  font-weight: bold;
+}
+.syntax--keyword.syntax--unit {
+  color: #445588;
+}
+.syntax--keyword.syntax--special-method {
+  color: #0086B3;
+}
+.syntax--storage {
+  color: #222;
+}
+.syntax--storage.syntax--type {
+  color: #222;
+}
+.syntax--entity.syntax--name.syntax--class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  text-decoration: underline;
+  color: #606aa1;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #900;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #008080;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #458;
+  font-weight: bold;
+}
+.syntax--entity.syntax--name.syntax--filename.syntax--find-in-files {
+  color: #E6DB74;
+}
+.syntax--support.syntax--constant,
+.syntax--support.syntax--function,
+.syntax--support.syntax--type {
+  color: #458;
+}
+.syntax--support.syntax--class {
+  color: #008080;
+}
+.syntax--invalid {
+  color: #F8F8F0;
+  background-color: #00A8C6;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #F8F8F0;
+  background-color: #8FBE00;
+}
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json,
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json .syntax--punctuation.syntax--string {
+  color: #000080;
+}
+.syntax--meta.syntax--structure.syntax--dictionary.syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--double.syntax--json {
+  color: #d14;
+}
+.syntax--meta.syntax--diff,
+.syntax--meta.syntax--diff.syntax--header {
+  color: #75715E;
+}
+.syntax--css.syntax--support.syntax--property-name {
+  font-weight: bold;
+  color: #333;
+}
+.syntax--css.syntax--constant {
+  color: #099;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="afmc-configurable-map-viewer-img-src-images-geobase-afmc-afmc-png-width-45-style-float-right-align-top-">AFMC Configurable Map Viewer <img src="/Users/Shared/DEV - cmv-wab-widgets/cmv-app/viewer/images/geobase/afmc/afmc.png" width="45" style="float: right;" align="top"></h1>
+<p>AFMC-CMV Version 1.0.0 beta </p>
+<p><img src="/Users/Shared/DEV - cmv-wab-widgets/cmv-app/viewer/images/geobase/ScreenShot_01.png" alt="Screenshot"></p>
+<h2 id="introduction">Introduction</h2>
+<p><strong><a href="https://cmv.io/">CMV</a></strong> is a community-supported open source mapping framework. CMV works with the <strong><a href="https://developers.arcgis.com/javascript/jsapi/3/">Esri JavaScript API</a></strong>, <strong><a href="https://www.esri.com/software/arcgis/arcgisserver">ArcGIS Server</a></strong>, <strong><a href="https://arcgis.com/">ArcGIS Online</a></strong> and more.</p>
+<p>AFMC has extended and modified the CMV code base to support the GeoBase Mission and improve compatibility when running on the AFNet environment. There are many reasons for using CMV as a starting point for the GeoBase Viewer:</p>
+<ul>
+<li>This JavaScript web app can be easily configured or used as a boilerplate/starting point for basic and advanced viewers. It also demonstrates best practices for modular design and OOP via classes in JS using dojo&#39;s <strong><a href="https://dojotoolkit.org/reference-guide/1.9/dojo/_base/declare.html">declare</a></strong> system.</li>
+<li>The CMV Viewer supports a large collection of Widgets developed by ESRI, CMV developers and other contributors, including Widgets written for ESRI&#39;s WEB App Builder (WAB) framework.</li>
+<li>There are large number of widgets built into the core viewer and many more widgets available from ESRI as well as <strong><a href="https://github.com/cmv/cmv-contrib-widgets">widgets contributed</a></strong> by the CMV developer community.</li>
+<li>The CMV framework is currently being used by nearly all CONUS GeoBase programs and has a group of talented administrators and developers supporting it.</li>
+<li>The open source framework allows the GeoBase program to spend its resources wisely, focusing on adding capabilities specific to their needs and not readily available from other sources rather than expending time and effort building and maintaining common capabilities.</li>
+</ul>
+<h2 id="widgets-afmc-configuration-">Widgets (AFMC Configuration):</h2>
+<h4 id="off-panel-widgets">Off-Panel Widgets</h4>
+<ul>
+<li>Growler (dijit)</li>
+<li>Basemaps (dijit)</li>
+<li>Scalebar (dijit)</li>
+<li>Home (WAB)</li>
+<li>Overview Map (dijit)</li>
+<li>Help (dijit)</li>
+<li>Map Coordinates (WAB)</li>
+<li>Attributes Table (WAB)</li>
+</ul>
+<h4 id="panel-widgets">Panel Widgets</h4>
+<ul>
+<li>Layers TOC (dijit)</li>
+<li>Legend (dijit)</li>
+<li>Identify (dijit)</li>
+<li>Find Coordinate (widget ACC)</li>
+<li>Bookmarks (dijit)</li>
+<li>Search (widget CMV)</li>
+<li>Draw (WAB)</li>
+<li>Feature Status (widget AFMC)</li>
+<li>Draw Buffer (widget AFMC)</li>
+<li>Measure (widget CMV)</li>
+<li>Print (dijit)</li>
+<li>Editor (dijit)</li>
+<li>Aloha Threat Zone (widget WAB)</li>
+<li>Nexrad (widget CMV)</li>
+</ul>
+<p>Read more about the <strong><a href="https://docs.cmv.io/en/latest/widgets/">core widgets</a></strong>. In addition, there is a growing number of <strong><a href="https://github.com/cmv/cmv-contrib-widgets">widgets contributed by the CMV developer community</a></strong>.</p>
+<h2 id="installation">Installation</h2>
+<p>The installation process...</p>
+<ol>
+<li><p>Copy the distribution package to your web/application server.</p>
+</li>
+<li><p>Remote into your web server and extract the archive to your <strong>_applicaitons</strong> directory (or other location normally used to keep web sites and applications, such as the /inetpub/wwwroot folder).</p>
+</li>
+<li><p>If the extract location is not the IIS root folder, create a virtual directory in IIS at the root of your default website. Name the virtual directory <strong>cmv</strong>, and point it to the location of the extracted CMV folder.</p>
+</li>
+<li><p>In IIS, verify the default documents list contains an entry for the <strong>index.html</strong> file name.</p>
+</li>
+<li><p>Test the core/demo viewer by accessing the url for your cmv with the following url: <strong><a href="https://[HOST]/cmv/index.html?config=wab">https://[HOST]/cmv/index.html?config=wab</a></strong>. This should load a demo configuration of the CMV.</p>
+</li>
+</ol>
+<h2 id="configuring-cmv-for-afmc">Configuring CMV for AFMC</h2>
+<p>Configuring the CMV viewer involves editing several JavaScript files located in the <strong>/cmv/js/config/</strong> folder. Using your favorite text editor, edit each of the files below to update the configuration for your site.</p>
+<ol>
+<li><p><strong>viewer.js</strong> - This is the primary configuration file for the AFMC viewer. It contains the settings for the viewer&#39;s layout, map layers, and widgets.</p>
+<p>a) Locate the <strong>operationalLayers</strong> section of the file. Update the url value associated with service titled <strong>AFMC Common Installation Picture (CIP)</strong>. The url should refer to the rest endpoint for the dynamic map service hosting your CIP data.</p>
+<p>b) In the <strong>widgets</strong> section of the file, locate the <strong>simpleBuffer</strong> widget configuration section. Update the <strong>featureServiceURL</strong> value to refer to the rest endpoint of your CIP map service. Then update the <strong>featureServiceLayers</strong> list to include the id&#39;s  of each layer that users can create buffers on, at a minimum, include the buildings layer id. The id is the number associated with the layer as listed in the map service&#39;s rest info.</p>
+<p>c) In the <strong>widgets</strong> section of the file, locate the <strong>print</strong> widget configuration section. Update the <strong>printTaskURL</strong> value to refer to the rest endpoint of your <strong>Export Web Map Task</strong> service. It is normally located at: Services &gt; Utilities &gt; Printing Tools (GPServer) &gt; Export Web Map Task, so you should be able to change just the hostname of the pre-configured printTaskURL. You should also verify in ArcGIS Server Manager that the service is started, as it is not set to startup by default.</p>
+</li>
+<li><p><strong>identify.js</strong> - At this point there is nothing to change in this file, just be aware that this file is used to configure and add popup definitions for your identify results.</p>
+</li>
+<li><p><strong>search.js</strong> - This is the configuration file used by the <strong>Search</strong> widget. It specifies the different searches users will be able to choose from and perform by outlining the layers, fields, and display results information for each search option defined in the <strong>layers</strong> section. At this point there should be nothing to change in this file, but to be certain verify the following field names for your buildings layer.</p>
+<p>a) If necessary, update every occurrence of the field name <strong>INSTALLATIONID</strong> in the file to refer to the field containing the four letter installation code for the AFMC bases, e.g. &#39;ZHTV&#39;.</p>
+<p>b) If necessary, update every occurrence of the field name <strong>BUILDINGNUMBER</strong> in the file to refer to the field containing the commonly used building identifier or building number.</p>
+<p>c) If necessary, update every occurrence of the field name <strong>SDSFEATURENAME</strong> in the file to refer to the field containing the commonly used building name.</p>
+<p>d) If necessary, update every occurrence of the field name <strong>BUILDINGSTATUS</strong> in the file to refer to the field containing the building status information.</p>
+<p>e) If necessary, update every occurrence of the field name <strong>SITEID</strong> in the file to refer to the eight character SDSFIE site identifier code, e.g. &#39;ZHTV0001&#39;.</p>
+</li>
+<li><p><strong>wabapp-config.js</strong> - This file contains configuration to support the Web App Builder (WAB) components.</p>
+<p>a) Locate and update the <strong>geometryService</strong> value to refer to the rest endpoint of your <strong>Geometry</strong> service. It is normally located at: Services &gt; Utilities &gt; GeometryServer so you should be able to change just the hostname of the pre-configured geometryService. You should also verify in ArcGIS Server Manager that the service is started, as it is not set to startup by default.</p>
+</li>
+<li><p><strong>Test the AMFC viewer</strong> configuration by accessing the url for your cmv with the following url: <strong><a href="https://[HOST]/cmv/index.html">https://[HOST]/cmv/index.html</a></strong>. This should load the AFMC configuration of the CMV as shown in the screenshot at the top of this document.</p>
+</li>
+</ol>
+<h2 id="additional-documentation-">Additional Documentation:</h2>
+<p>The CMV community maintains <a href="https://docs.cmv.io/">documentation</a> for getting started and guidance on configuring your application. This documentation is a bit sparce at this point but is a good place to start when trying to update and extend your configuration.</p>
+<p><a href="https://docs.cmv.io/"><img src="https://img.shields.io/badge/docs-2.0.0--beta.1-brightgreen.svg?style=flat" alt="Read The Docs"></a></p>
+<h2 id="change-log-">Change log:</h2>
+<p>See the <a href="https://github.com/cmv/cmv-app/releases">GitHub Releases</a> for change logs for all versions of the core CMV viewer framework.</p>
+<p>Noteworthy changes to the AFMC version of the framework include:</p>
+<ul>
+<li>Internalize hosted JavaScript Libraries (including Esri&#39;s JavaScript API v.3.20) to allow the framework to run on the restricted and unpredictable AFNet environment.</li>
+<li>Incorporate WAB Widget components from the cmv-wab-widgets project.</li>
+<li>Resolve issues/conflicts with the LyerControl widget (layer toggling, sub-layer visibility and action menus)</li>
+<li>Resolve issues/conflicts with the Coordinate widget (map-click event conflicts, set MGRS as displayed coords)</li>
+<li>Incorporate relevant custom widgets from the greater GeoBase and CMV community of developers: Find Coordinate, Map Coordinates, Search, Attribute Tables, Measure, Aloha Threat Zones, Nexrad weather radar feed.</li>
+<li>Add Draw Buffer widget that supports buffering 1) user markup, 2) MGRS coordinates, and 3) feature selection.</li>
+<li>Add Feature Status widget that allows users to click a feature to display status infos for the feature (e.g airfield surface, building condition, etc.)</li>
+</ul></body>
+</html>
